@@ -3,7 +3,9 @@ package be.vdab.model;
 import javax.persistence.*;
 import java.util.List;
 
-@MappedSuperclass
+@Entity
+@DiscriminatorColumn(name = "type", discriminatorType = DiscriminatorType.STRING)
+@Inheritance(strategy = InheritanceType.JOINED)
 public abstract class Article {
 
     // region variables

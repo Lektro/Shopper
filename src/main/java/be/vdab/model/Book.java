@@ -1,9 +1,11 @@
 package be.vdab.model;
 
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+
 import javax.persistence.*;
 
-@MappedSuperclass
-@Inheritance(strategy = InheritanceType.JOINED)
+@Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public abstract class Book extends Article{
 
     // region variables
