@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.validation.constraints.NotNull;
 
 @RestController
-@RequestMapping("/api/article/")
+@RequestMapping("/article/")
 public class ArticleRestController {
     private ArticleService articleService;
 
