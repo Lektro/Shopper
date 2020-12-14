@@ -4,15 +4,15 @@ import javax.persistence.*;
 
 @MappedSuperclass
 @Inheritance(strategy = InheritanceType.JOINED)
-public class Book extends Article{
+public abstract class Book extends Article{
 
     // region variables
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", updatable = false, nullable = false)
     private Long id;
 
-    @Column
+    @Column(length = 100)
     String author;
     @Column
     String isbn;

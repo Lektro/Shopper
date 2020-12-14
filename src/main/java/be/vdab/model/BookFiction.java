@@ -6,7 +6,7 @@ import javax.persistence.*;
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public class BookFiction extends Book{
 
-    enum Genre{
+    public enum Genre{
         THRILLER,
         FANTASY,
         DEDECTIVE,
@@ -17,7 +17,7 @@ public class BookFiction extends Book{
     // region variables
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", updatable = false, nullable = false)
     private Long id;
 

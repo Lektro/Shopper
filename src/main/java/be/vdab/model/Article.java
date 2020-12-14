@@ -8,7 +8,7 @@ public abstract class Article {
 
     // region variables
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", updatable = false, nullable = false)
     private Long id;
 
@@ -21,13 +21,13 @@ public abstract class Article {
     @OneToMany
     List<Favorite> favorites;
 
-    @Column
+    @Column(nullable = false,length = 100)
     String title;
 
-    @Column
+    @Column(nullable = false, precision = 2)
     double price;
 
-    @Column
+    @Column(nullable = false,length = 100)
     long publisherId;
     // endregion
 

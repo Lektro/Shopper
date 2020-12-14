@@ -6,7 +6,7 @@ import javax.persistence.*;
 public class Favorite {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", updatable = false, nullable = false)
     private Long id;
 
@@ -17,7 +17,7 @@ public class Favorite {
         this.id = id;
     }
 
-    @Id
+
     public Long getId() {
         return id;
     }

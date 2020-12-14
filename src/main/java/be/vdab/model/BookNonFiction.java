@@ -6,18 +6,20 @@ import javax.persistence.*;
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public class BookNonFiction extends Book{
 
-    // region variables
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id", updatable = false, nullable = false)
-    private Long id;
-
-    enum Subject{
+    public enum Subject{
         HISTORY,
         COOCKING,
         SCIENCE,
         SPORT
     }
+
+    // region variables
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", updatable = false, nullable = false)
+    private Long id;
+
+
 
     @Column
     Subject subject;
