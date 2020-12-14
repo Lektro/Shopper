@@ -5,8 +5,6 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 
 @Entity
-@Inheritance(strategy = InheritanceType.JOINED)
-public class LP extends Article{
-
-
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+public class BookFiction extends Book{
 }
