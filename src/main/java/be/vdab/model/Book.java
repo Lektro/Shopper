@@ -1,2 +1,4 @@
-package be.vdab.model;public class Book {
+package be.vdab.model;
+
+public class Book {
 }
