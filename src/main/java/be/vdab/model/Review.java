@@ -9,16 +9,15 @@ public class Review {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column
     @Enumerated(EnumType.STRING)
     private Score score;
 
+    @Column
     private String description;
 
-    @ManyToOne
-    private User user;
 
-    @ManyToOne
-    private Article article;
+
 
     // Getters & Setters
     public Long getId() {
@@ -43,21 +42,6 @@ public class Review {
         return this;
     }
 
-    public User getUser() {
-        return user;
-    }
 
-    public Review setUser(User user) {
-        this.user = user;
-        return this;
-    }
 
-    public Article getArticle() {
-        return article;
-    }
-
-    public Review setArticle(Article article) {
-        this.article = article;
-        return this;
-    }
 }

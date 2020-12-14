@@ -12,14 +12,6 @@ public abstract class Article {
     @Column(name = "id", updatable = false, nullable = false)
     private Long id;
 
-    @OneToMany
-    List<Review> reviews;
-
-    @OneToMany
-    List<OrderArticle> orderArticles;
-
-    @OneToMany
-    List<Favorite> favorites;
 
     @Column(nullable = false,length = 100)
     String title;
@@ -36,29 +28,7 @@ public abstract class Article {
         return id;
     }
 
-    public List<Review> getReviews() {
-        return reviews;
-    }
 
-    public void setReviews(List<Review> reviews) {
-        this.reviews = reviews;
-    }
-
-    public List<OrderArticle> getOrderArticles() {
-        return orderArticles;
-    }
-
-    public void setOrderArticles(List<OrderArticle> orderArticles) {
-        this.orderArticles = orderArticles;
-    }
-
-    public List<Favorite> getFavorites() {
-        return favorites;
-    }
-
-    public void setFavorites(List<Favorite> favorites) {
-        this.favorites = favorites;
-    }
 
     public String getTitle() {
         return title;
