@@ -10,8 +10,6 @@ public class Favorite {
     @Column(name = "id", updatable = false, nullable = false)
     private Long id;
 
-    User user;
-    Article article;
 
     public void setId(Long id) {
         this.id = id;
