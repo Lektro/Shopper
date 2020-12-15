@@ -5,6 +5,7 @@ export interface Article {
     author: string;
     price: number;
 
+
     // all arguments constructor not needed
 
 }

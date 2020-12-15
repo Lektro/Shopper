@@ -4,7 +4,6 @@ import javax.persistence.*;
 
 @Entity
 @DiscriminatorValue("book")
-
 public class BookNonFiction extends Book{
 
     private final String type = "NON-FICTION";
