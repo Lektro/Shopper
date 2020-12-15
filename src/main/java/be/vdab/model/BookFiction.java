@@ -14,6 +14,7 @@ public class BookFiction extends Book {
     private Long id;
 
     @Column
+    @Enumerated(EnumType.STRING)
     private Genre genre;
 
     @Column
@@ -21,9 +22,8 @@ public class BookFiction extends Book {
 
     public BookFiction() {}
 
-    public BookFiction(String bookType, Genre genre) {
+    public BookFiction(String bookType) {
         this.bookType = bookType;
-        this.genre = genre;
     }
 
     public enum Genre {
@@ -33,6 +33,7 @@ public class BookFiction extends Book {
         ROMANCE,
         SCIFI
     }
+
     public Long getId() {
         return id;
     }

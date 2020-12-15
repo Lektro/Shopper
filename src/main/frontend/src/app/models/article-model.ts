@@ -9,6 +9,7 @@ export interface Article {
     pageCount: number;
     genre: string;
     isbn: string;
+    publisherId: number;
 
     // all arguments constructor not needed
 

@@ -8,6 +8,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import static be.vdab.model.BookFiction.Genre.FANTASY;
+
 @SpringBootApplication
 public class AppStart implements CommandLineRunner {
 
@@ -20,8 +22,7 @@ public class AppStart implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        BookFiction bookFiction = new BookFiction("FICTION", BookFiction.Genre.FANTASY);
-        bookFiction.setBookType("FANTASY");
+        BookFiction bookFiction = new BookFiction("FICTION");
         bookFiction.setAuthor("JK Rowling");
         bookFiction.setPrice(10.00);
         bookFiction.setTitle("Harry Potter and his little elf");
@@ -30,6 +31,8 @@ public class AppStart implements CommandLineRunner {
         bookFiction.setIsbn("1587859684754");
         bookFiction.setBookDescription("test description, casting no longer needed");
         bookFiction.getArticleType();
+        bookFiction.setGenre(FANTASY);
+
         articleRepository.save(bookFiction);
 
     }
