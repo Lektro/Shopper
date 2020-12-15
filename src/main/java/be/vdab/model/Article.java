@@ -1,14 +1,14 @@
 package be.vdab.model;
 
+import org.hibernate.annotations.Formula;
+
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
-@DiscriminatorColumn(name = "article_type", discriminatorType = DiscriminatorType.STRING)
+@DiscriminatorColumn(name = "articleType", discriminatorType = DiscriminatorType.STRING)
 @Inheritance(strategy = InheritanceType.JOINED)
 public abstract class Article {
 
-    // region variables
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", updatable = false, nullable = false)
@@ -22,9 +22,18 @@ public abstract class Article {
 
     @Column(nullable = false,length = 100)
     long publisherId;
-    // endregion
 
-    // region getters / setters
+    @Column(name="articleType", nullable=false, updatable=false, insertable=false)
+    private String articleType;
+
+    public String getArticleType() {
+        return articleType;
+    }
+
+    public void setArticleType(String articleType) {
+        this.articleType = articleType;
+    }
+
     public Long getId() {
         return id;
     }
@@ -52,6 +61,5 @@ public abstract class Article {
     public void setPublisherId(long publisherId) {
         this.publisherId = publisherId;
     }
-    // endregion
 
 }

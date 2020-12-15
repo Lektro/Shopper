@@ -3,7 +3,16 @@
 
   <li *ngFor="let article of articles">
 <!--    this only displays the whole array with incorrect values for type-->
-    {{article}}
+    ID = {{article.id}},
+    TITLE = {{article.title}},
+    BOOKTYPE = {{article.bookType}},
+    AUTHOR = {{article.author}},
+    PRICE = {{article.price}},
+    DESCRIPTION = {{article.bookDescription}},
+    GENRE = {{article.genre}},
+    ISBN = {{article.isbn}},
+    PAGECOUNT = {{article.pageCount}},
+    ARTICLETYPE = {{article.articleType}},
 
   </li>
 </ul>

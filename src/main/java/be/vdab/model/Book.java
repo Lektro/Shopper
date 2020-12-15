@@ -63,6 +63,7 @@ public abstract class Book extends Article{
     public void setBookType(String type) {
         this.bookType = type;
     }
+
     // endregion
 
 }

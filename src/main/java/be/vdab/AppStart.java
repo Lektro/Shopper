@@ -29,6 +29,7 @@ public class AppStart implements CommandLineRunner {
         bookFiction.setPageCount(285);
         bookFiction.setIsbn("1587859684754");
         bookFiction.setBookDescription("test description, casting no longer needed");
+        bookFiction.getArticleType();
         articleRepository.save(bookFiction);
 
     }
