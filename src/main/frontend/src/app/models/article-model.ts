@@ -1,8 +1,6 @@
-export class Product {
+export interface Article {
     id: number;
-
+    title:string;
     // all arguments constructor
-      constructor(id: number) {
-          this.id = id;
-      }
+ 
 }

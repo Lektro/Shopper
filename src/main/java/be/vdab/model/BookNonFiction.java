@@ -3,12 +3,16 @@ package be.vdab.model;
 import javax.persistence.*;
 
 @Entity
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorValue("book")
+
 public class BookNonFiction extends Book{
+
+    private final String type = "NON-FICTION";
+
 
     public enum Subject{
         HISTORY,
-        COOCKING,
+        COOKING,
         SCIENCE,
         SPORT
     }
@@ -36,6 +40,10 @@ public class BookNonFiction extends Book{
 
     public void setSubject(Subject subject) {
         this.subject = subject;
+    }
+
+    public String getType() {
+        return type;
     }
 
     // endregion

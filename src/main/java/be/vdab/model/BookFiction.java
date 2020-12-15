@@ -3,8 +3,10 @@ package be.vdab.model;
 import javax.persistence.*;
 
 @Entity
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorValue("book")
 public class BookFiction extends Book{
+
+    private final String type = "FICTION";
 
     public enum Genre{
         THRILLER,
@@ -49,6 +51,10 @@ public class BookFiction extends Book{
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getType() {
+        return type;
     }
     // endregion
 

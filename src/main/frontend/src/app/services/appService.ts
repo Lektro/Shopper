@@ -1,11 +1,18 @@
 import {HttpClient} from '@angular/common/http';
 import {Injectable} from "@angular/core";
+import { Observable } from 'rxjs';
+import { Article } from '../models/article-model';
 
-@Injectable()
-    export class appService {
-    private articlesUrl = "/articles";
+@Injectable({providedIn: "root"})
+    export class AppService {
+    private articlesUrl = "/article";
 
     constructor(private http: HttpClient) {
+    }
+
+    public getArticles(): Observable<Article[]> {
+        return this.http.get<Article[]>(this.articlesUrl);
+
     }
 
 }
