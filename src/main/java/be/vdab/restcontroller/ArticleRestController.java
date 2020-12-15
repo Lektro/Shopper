@@ -2,6 +2,7 @@ package be.vdab.restcontroller;
 
 import be.vdab.model.Article;
 import be.vdab.service.ArticleService;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,7 +11,9 @@ import javax.validation.constraints.NotNull;
 
 @RestController
 @RequestMapping("/article")
+@CrossOrigin(origins = "http://localhost:4200")
 public class ArticleRestController {
+
     private ArticleService articleService;
 
     public ArticleRestController (ArticleService articleService) { this.articleService = articleService; }

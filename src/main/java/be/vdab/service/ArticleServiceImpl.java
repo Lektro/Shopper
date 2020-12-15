@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 @Transactional
 public class ArticleServiceImpl implements ArticleService {
+
     private final ArticleRepository articleRepository;
 
     public ArticleServiceImpl (ArticleRepository articleRepository) {

@@ -21,9 +21,9 @@ public class AppStart implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         Book bookFiction = new BookFiction();
-        bookFiction.setAuthor("test");
+        bookFiction.setAuthor("JK Rowling");
         bookFiction.setPrice(10.00);
-        bookFiction.setTitle("test 2");
+        bookFiction.setTitle("Harry Potter and his little elf");
         bookFiction.setPublisherId(1);
         articleRepository.save(bookFiction);
 
