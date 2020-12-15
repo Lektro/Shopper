@@ -20,12 +20,15 @@ public class AppStart implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        Book bookFiction = new BookFiction("FICTION", BookFiction.Genre.FANTASY);
+        BookFiction bookFiction = new BookFiction("FICTION", BookFiction.Genre.FANTASY);
         bookFiction.setBookType("FANTASY");
         bookFiction.setAuthor("JK Rowling");
         bookFiction.setPrice(10.00);
         bookFiction.setTitle("Harry Potter and his little elf");
         bookFiction.setPublisherId(1);
+        bookFiction.setPageCount(285);
+        bookFiction.setIsbn("1587859684754");
+        bookFiction.setBookDescription("test description, casting no longer needed");
         articleRepository.save(bookFiction);
 
     }

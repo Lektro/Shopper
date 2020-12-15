@@ -14,7 +14,6 @@ public abstract class Article {
     @Column(name = "id", updatable = false, nullable = false)
     private Long id;
 
-
     @Column(nullable = false,length = 100)
     String title;
 
@@ -29,8 +28,6 @@ public abstract class Article {
     public Long getId() {
         return id;
     }
-
-
 
     public String getTitle() {
         return title;

@@ -8,6 +8,17 @@ public class BookFiction extends Book {
 
     private String bookType;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", updatable = false, nullable = false)
+    private Long id;
+
+    @Column
+    private Genre genre;
+
+    @Column
+    private String bookDescription;
+
     public BookFiction() {}
 
     public BookFiction(String bookType, Genre genre) {
@@ -22,19 +33,6 @@ public class BookFiction extends Book {
         ROMANCE,
         SCIFI
     }
-
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", updatable = false, nullable = false)
-    private Long id;
-
-    @Column
-    private Genre genre;
-
-    @Column
-    String description;
-
     public Long getId() {
         return id;
     }
@@ -47,12 +45,12 @@ public class BookFiction extends Book {
         this.genre = genre;
     }
 
-    public String getDescription() {
-        return description;
+    public String getBookDescription() {
+        return bookDescription;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setBookDescription(String bookDescription) {
+        this.bookDescription = bookDescription;
     }
 
     public String getBookType() {
