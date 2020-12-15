@@ -1,10 +1,9 @@
 <ul>
+<!--  <li ng-repeat="article in articles">{{articles}}</li>-->
+
   <li *ngFor="let article of articles">
-    {{article.id}}
-    {{article.title}}
-    {{article.type}}
-    {{article.author}}
-    {{article.price}}
+<!--    this only displays the whole array with incorrect values for type-->
+    {{article}}
 
   </li>
 </ul>

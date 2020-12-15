@@ -1,6 +1,5 @@
 package be.vdab;
 
-import be.vdab.model.Article;
 import be.vdab.model.Book;
 import be.vdab.model.BookFiction;
 import be.vdab.repository.ArticleRepository;
@@ -21,8 +20,8 @@ public class AppStart implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        Book bookFiction = new BookFiction();
-        bookFiction.setType("FANTASY");
+        Book bookFiction = new BookFiction("FICTION", BookFiction.Genre.FANTASY);
+        bookFiction.setBookType("FANTASY");
         bookFiction.setAuthor("JK Rowling");
         bookFiction.setPrice(10.00);
         bookFiction.setTitle("Harry Potter and his little elf");

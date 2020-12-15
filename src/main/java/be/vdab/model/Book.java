@@ -24,7 +24,7 @@ public abstract class Book extends Article{
     int pageCount;
 
     @Column
-    private String type;
+    private String bookType;
     // endregion
 
     // region getters / setters
@@ -57,11 +57,11 @@ public abstract class Book extends Article{
     }
 
     public String getType() {
-        return type;
+        return bookType;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setBookType(String type) {
+        this.bookType = type;
     }
     // endregion
 
