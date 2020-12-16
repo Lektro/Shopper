@@ -19,3 +19,26 @@
 </ul>
 
 <p>article works!</p>
+
+
+<label>IdSearch: </label><input (input)="updateId($event.target.value)"><br>
+<p> id = {{this.id}}</p>
+
+<ul>
+  <li *ngFor="let article of articles2 | async">
+    ID = {{article.id}},
+    TITLE = {{article.title}},
+    BOOKTYPE = {{article.bookType}},
+    AUTHOR = {{article.author}},
+    PRICE = {{article.price}},
+    DESCRIPTION = {{article.bookDescription}},
+    GENRE = {{article.genre}},
+    ISBN = {{article.isbn}},
+    PAGECOUNT = {{article.pageCount}},
+    ARTICLETYPE = {{article.articleType}},
+    PUBLISHERID = {{article.publisherId}}
+  </li>
+</ul>
+
+<!--<label>logInput: </label><input (input)="updateId($event.target.value)"><br>-->
+

@@ -2,10 +2,9 @@ package be.vdab.restcontroller;
 
 import be.vdab.model.Article;
 import be.vdab.service.ArticleService;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.constraints.NotNull;
 
@@ -21,5 +20,10 @@ public class ArticleRestController {
     @GetMapping(value = { "", "/" })
     public @NotNull Iterable<Article> getArticles() {
         return articleService.getAllArticles();
+    }
+
+    @GetMapping(value = "/{id}")
+    public @NotNull Iterable<Article> getArticlesById(@PathVariable("id") int id) {
+        return articleService.getArticlesById(id);
     }
 }

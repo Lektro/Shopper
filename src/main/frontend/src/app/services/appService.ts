@@ -12,7 +12,10 @@ import { Article } from '../models/article-model';
 
     public getArticles(): Observable<Article[]> {
         return this.http.get<Article[]>(this.articlesUrl);
-
     }
+    public getArticlesById(id: number): Observable<Article[]>{
+      return this.http.get<Article[]>(this.articlesUrl + "/" + id);
+    }
+
 
 }
