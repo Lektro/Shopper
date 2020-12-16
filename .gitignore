@@ -3,5 +3,8 @@
 modules.xml
 .idea/*
 /target
-
+.classpath
+.project
+.settings/
+.vscode/
 

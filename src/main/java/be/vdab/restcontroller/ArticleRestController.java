@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 @RequestMapping("/article")
@@ -19,7 +21,9 @@ public class ArticleRestController {
     public ArticleRestController (ArticleService articleService) { this.articleService = articleService; }
 
     @GetMapping(value = { "", "/" })
-    public @NotNull Iterable<Article> getArticles() {
-        return articleService.getAllArticles();
+    public @NotNull List<Article> getArticles() {
+        List<Article> listArticles = articleService.getAllArticles();
+
+        return listArticles;
     }
 }

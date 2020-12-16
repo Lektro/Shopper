@@ -4,19 +4,10 @@ import javax.persistence.*;
 
 @Entity
 @DiscriminatorValue("book")
-public class BookFiction extends Book{
+public class BookFiction extends Book {
 
-    private final String type = "FICTION";
-
-    public enum Genre{
-        THRILLER,
-        FANTASY,
-        DEDECTIVE,
-        ROMANCE,
-        SCIFI
-    }
-
-    // region variables
+    @Column
+    private String bookType;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,14 +15,25 @@ public class BookFiction extends Book{
     private Long id;
 
     @Column
-    Genre genre;
+    @Enumerated(EnumType.STRING)
+    private Genre genre;
 
     @Column
-    String description;
-    // endregion
+    private String bookDescription;
 
-    // region getters / setters
+    public BookFiction() {}
 
+    public BookFiction(String bookType) {
+        this.bookType = bookType;
+    }
+
+    public enum Genre {
+        THRILLER,
+        FANTASY,
+        DEDECTIVE,
+        ROMANCE,
+        SCIFI
+    }
 
     public Long getId() {
         return id;
@@ -45,17 +47,15 @@ public class BookFiction extends Book{
         this.genre = genre;
     }
 
-    public String getDescription() {
-        return description;
+    public String getBookDescription() {
+        return bookDescription;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setBookDescription(String bookDescription) {
+        this.bookDescription = bookDescription;
     }
 
-    public String getType() {
-        return type;
+    public String getBookType() {
+        return bookType;
     }
-    // endregion
-
 }

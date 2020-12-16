@@ -1,10 +1,19 @@
 <ul>
+<!--  <li ng-repeat="article in articles">{{articles}}</li>-->
+
   <li *ngFor="let article of articles">
-    {{article.id}}
-    {{article.title}}
-    {{article.type}}
-    {{article.author}}
-    {{article.price}}
+<!--    this only displays the whole array with incorrect values for type-->
+    ID = {{article.id}},
+    TITLE = {{article.title}},
+    BOOKTYPE = {{article.bookType}},
+    AUTHOR = {{article.author}},
+    PRICE = {{article.price}},
+    DESCRIPTION = {{article.bookDescription}},
+    GENRE = {{article.genre}},
+    ISBN = {{article.isbn}},
+    PAGECOUNT = {{article.pageCount}},
+    ARTICLETYPE = {{article.articleType}},
+    PUBLISHERID = {{article.publisherId}}
 
   </li>
 </ul>

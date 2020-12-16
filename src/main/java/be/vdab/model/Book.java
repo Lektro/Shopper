@@ -8,26 +8,23 @@ import javax.persistence.*;
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public abstract class Book extends Article{
 
-    // region variables
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", updatable = false, nullable = false)
     private Long id;
 
     @Column(length = 100)
-    String author;
+    private String author;
 
     @Column
-    String isbn;
+    private String isbn;
 
     @Column
-    int pageCount;
+    private int pageCount;
 
     @Column
-    private String type;
-    // endregion
+    private String bookType;
 
-    // region getters / setters
     public Long getId() {
         return id;
     }
@@ -57,12 +54,10 @@ public abstract class Book extends Article{
     }
 
     public String getType() {
-        return type;
+        return bookType;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setBookType(String type) {
+        this.bookType = type;
     }
-    // endregion
-
 }
