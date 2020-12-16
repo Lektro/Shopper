@@ -7,13 +7,15 @@ import { ArticleComponent } from './article/article.component';
 import { AppService } from './services/appService';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
+import {DropdownDirective} from "./shared/dropdown.directive";
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ArticleComponent,
-    LoginComponent
+    LoginComponent,
+    DropdownDirective
   ],
   imports: [
     BrowserModule,
