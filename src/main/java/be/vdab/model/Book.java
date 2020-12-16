@@ -16,10 +16,15 @@ public abstract class Book extends Article{
 
     @Column(length = 100)
     String author;
+
     @Column
     String isbn;
+
     @Column
     int pageCount;
+
+    @Column
+    private String type;
     // endregion
 
     // region getters / setters
@@ -49,6 +54,14 @@ public abstract class Book extends Article{
 
     public void setPageCount(int pageCount) {
         this.pageCount = pageCount;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
     // endregion
 
