@@ -6,6 +6,7 @@ import javax.persistence.*;
 @DiscriminatorValue("book")
 public class BookFiction extends Book {
 
+    @Column
     private String bookType;
 
     @Id
