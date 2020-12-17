@@ -63,5 +63,4 @@ public abstract class Article {
     public void setPublisherId(long publisherId) {
         this.publisherId = publisherId;
     }
-
 }

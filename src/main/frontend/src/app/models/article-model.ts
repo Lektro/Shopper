@@ -11,7 +11,4 @@ export interface Article {
     genre: string;
     isbn: string;
     publisherId: number;
-
-    // all arguments constructor not needed
-
 }

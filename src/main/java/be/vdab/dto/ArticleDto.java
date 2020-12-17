@@ -2,6 +2,7 @@ package be.vdab.dto;
 
 import be.vdab.model.Article;
 
+//DTO not yet used
 public class ArticleDto {
 
     private Article article;

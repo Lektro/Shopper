@@ -3,7 +3,7 @@ package be.vdab.model;
 import javax.persistence.*;
 
 @Entity
-@DiscriminatorValue("Fiction")
+@DiscriminatorValue("Fiction Book")
 public class BookFiction extends Book {
 
     @Column
@@ -36,6 +36,6 @@ public class BookFiction extends Book {
         FANTASY,
         DEDECTIVE,
         ROMANCE,
-        SCIFI
+        SCIFI,
     }
 }
