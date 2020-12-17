@@ -13,7 +13,6 @@ import java.util.List;
 @Transactional
 public class ArticleServiceImpl implements ArticleService {
 
-    @Autowired
     private final ArticleRepository articleRepository;
 
     public ArticleServiceImpl (ArticleRepository articleRepository) {
@@ -21,8 +20,13 @@ public class ArticleServiceImpl implements ArticleService {
     }
 
     @Override
-    public List<Article> getAllArticles() {
+    public Iterable<Article> getAllArticles() {
         return articleRepository.findAll();
+    }
+
+    @Override
+    public void save(Article article) {
+
     }
 
 }

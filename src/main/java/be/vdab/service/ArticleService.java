@@ -6,5 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public interface ArticleService {
-    List<Article> getAllArticles();
+    Iterable<Article> getAllArticles();
+
+    void save(Article article);
 }

@@ -1,13 +1,14 @@
 import {HttpClient} from '@angular/common/http';
-import {Injectable} from "@angular/core";
+import {Injectable} from '@angular/core';
 import { Observable } from 'rxjs';
 import { Article } from '../models/article-model';
 
-@Injectable({providedIn: "root"})
+@Injectable({providedIn: 'root'})
     export class AppService {
-    private articlesUrl = "/article";
+    private readonly articlesUrl: string;
 
     constructor(private http: HttpClient) {
+      this.articlesUrl = 'http://localhost:8080/api';
     }
 
     public getArticles(): Observable<Article[]> {

@@ -9,14 +9,14 @@ import { AppService } from '../services/appService';
 })
 export class ArticleComponent implements OnInit {
 
-  articles : Article[] = [];
+  articles: Article[] = [];
 
   constructor(private appService: AppService) {
 
   }
 
   ngOnInit(): void {
-      this.appService.getArticles().subscribe(articles => {this.articles = articles})
+      this.appService.getArticles().subscribe(articles => {this.articles = articles; });
   }
 
 }
