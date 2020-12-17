@@ -3,8 +3,7 @@ package be.vdab.model;
 import javax.persistence.*;
 
 @Entity
-@DiscriminatorValue("book")
-@Inheritance(strategy = InheritanceType.JOINED)
+@DiscriminatorValue("Fiction")
 public class BookFiction extends Book {
 
     @Column

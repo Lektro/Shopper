@@ -3,7 +3,6 @@ package be.vdab.model;
 import javax.persistence.*;
 
 @Entity
-@Inheritance(strategy = InheritanceType.JOINED)
 public class Book extends Article {
 
     @Column(length = 100)

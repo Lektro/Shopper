@@ -21,7 +21,7 @@ public abstract class Article {
     @Column(nullable = false,length = 100)
     private long publisherId;
 
-    @Column( nullable=false, updatable=false, insertable=false)
+    @Column(nullable=false, updatable=false, insertable=false)
     public String articleType;
 
     public void setId(Long id) {
