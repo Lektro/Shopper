@@ -35,6 +35,5 @@ public class AppStart implements CommandLineRunner {
 
         articleRepository.save(bookFiction);
 
-        articleRepository.findAll().forEach(System.out::println);
     }
 }

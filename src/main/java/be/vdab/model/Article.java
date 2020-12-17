@@ -26,6 +26,10 @@ public abstract class Article {
     @Column(name="articleType", nullable=false, updatable=false, insertable=false)
     private String articleType;
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public String getArticleType() {
         return articleType;
     }
