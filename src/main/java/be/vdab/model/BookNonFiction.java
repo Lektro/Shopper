@@ -12,12 +12,12 @@ public class BookNonFiction extends Book {
 
     public BookNonFiction() {}
 
-    public Subject getBookSubject() {
+    public Subject getSubject() {
         return subject;
     }
 
-    public void setBookSubject(Subject bookSubject) {
-        this.subject = bookSubject;
+    public void setSubject(Subject subject) {
+        this.subject = subject;
     }
 
     public enum Subject{

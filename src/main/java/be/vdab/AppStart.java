@@ -51,7 +51,7 @@ public class AppStart implements CommandLineRunner {
         bookNonFiction.setAuthor("Swedish Chef");
         bookNonFiction.setPageCount(158);
         bookNonFiction.setIsbn("1587859625874");
-        bookNonFiction.setBookSubject(COOKING);
+        bookNonFiction.setSubject(COOKING);
 
         articleRepository.save(bookNonFiction);
 
