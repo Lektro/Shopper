@@ -1,16 +1,14 @@
 package be.vdab.model;
 
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
-
 import javax.persistence.*;
 
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-public abstract class Book extends Article{
+public abstract class Book extends Article {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", updatable = false, nullable = false)
+    @Column(updatable = false, nullable = false)
     private Long id;
 
     @Column(length = 100)
@@ -23,7 +21,7 @@ public abstract class Book extends Article{
     private int pageCount;
 
     @Column
-    private String bookType;
+    protected String bookType;
 
     public Long getId() {
         return id;
@@ -53,11 +51,11 @@ public abstract class Book extends Article{
         this.pageCount = pageCount;
     }
 
-    public String getType() {
-        return bookType;
-    }
-
     public void setBookType(String type) {
         this.bookType = type;
+    }
+
+    public String getBookType() {
+        return bookType;
     }
 }

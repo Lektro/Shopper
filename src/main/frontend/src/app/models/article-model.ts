@@ -1,13 +1,15 @@
 export interface Article {
-    articleId: number;
+    id: number;
     title: string;
     articleType: string;
     bookType: string;
-    bookDescription: string;
+    bookSummary: string;
+    bookSubject: string;
     author: string;
     price: number;
     pageCount: number;
     genre: string;
+    subject: string;
     isbn: string;
     publisherId: number;
 

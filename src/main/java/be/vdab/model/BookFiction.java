@@ -6,12 +6,9 @@ import javax.persistence.*;
 @DiscriminatorValue("book")
 public class BookFiction extends Book {
 
-    @Column
-    private String bookType;
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", updatable = false, nullable = false)
+    @Column(updatable = false, nullable = false)
     private Long id;
 
     @Column
@@ -19,20 +16,12 @@ public class BookFiction extends Book {
     private Genre genre;
 
     @Column
-    private String bookDescription;
+    private String bookSummary;
 
     public BookFiction() {}
 
     public BookFiction(String bookType) {
-        this.bookType = bookType;
-    }
-
-    public enum Genre {
-        THRILLER,
-        FANTASY,
-        DEDECTIVE,
-        ROMANCE,
-        SCIFI
+        this.bookType = "FICTION";
     }
 
     public Long getId() {
@@ -47,15 +36,23 @@ public class BookFiction extends Book {
         this.genre = genre;
     }
 
-    public String getBookDescription() {
-        return bookDescription;
-    }
-
-    public void setBookDescription(String bookDescription) {
-        this.bookDescription = bookDescription;
-    }
-
     public String getBookType() {
         return bookType;
+    }
+
+    public String getBookSummary() {
+        return bookSummary;
+    }
+
+    public void setBookSummary(String bookSummary) {
+        this.bookSummary = bookSummary;
+    }
+
+    public enum Genre {
+        THRILLER,
+        FANTASY,
+        DEDECTIVE,
+        ROMANCE,
+        SCIFI
     }
 }

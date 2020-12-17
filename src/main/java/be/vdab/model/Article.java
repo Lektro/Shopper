@@ -11,20 +11,20 @@ public abstract class Article {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", updatable = false, nullable = false)
+    @Column(updatable = false, nullable = false)
     private Long id;
 
     @Column(nullable = false,length = 100)
-    String title;
+    private String title;
 
     @Column(nullable = false, precision = 2)
-    double price;
+    private double price;
 
     @Column(nullable = false,length = 100)
-    long publisherId;
+    private long publisherId;
 
-    @Column(name="articleType", nullable=false, updatable=false, insertable=false)
-    private String articleType;
+    @Column( nullable=false, updatable=false, insertable=false)
+    public String articleType;
 
     public void setId(Long id) {
         this.id = id;
