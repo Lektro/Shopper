@@ -7,6 +7,7 @@ import { ArticleComponent } from './article/article.component';
 import { AppService } from './services/appService';
 import { HttpClientModule } from '@angular/common/http';
 import { CreateArticleComponent } from './create-article/create-article.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { CreateArticleComponent } from './create-article/create-article.componen
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [AppService],
   bootstrap: [AppComponent]

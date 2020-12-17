@@ -1,20 +1,20 @@
 <p>create-article works!</p>
-<h3>Create Employee</h3>
+<h3>Create Article</h3>
 <div [hidden]="submitted" style="width: 400px;">
   <form (ngSubmit)="onSubmit()">
     <div class="form-group">
-      <label for="name">First Name</label>
-      <input type="text" class="form-control" id="firstName" required [(ngModel)]="employee.firstName" name="firstName">
+      <label for="title">Title</label>
+      <input *ngIf="articles" type="text" class="form-control" id="title" required [(ngModel)]="articles.title" name="title">
     </div>
 
     <div class="form-group">
-      <label for="name">Last Name</label>
-      <input type="text" class="form-control" id="lastName" required [(ngModel)]="employee.lastName" name="lastName">
+      <label for="author">Author</label>
+      <input type="text" class="form-control" id="author" required [(ngModel)]="article.author" name="author">
     </div>
 
     <div class="form-group">
-      <label for="name">Email Id</label>
-      <input type="text" class="form-control" id="emailId" required [(ngModel)]="employee.emailId" name="emailId">
+      <label for="pageCount">Page Count</label>
+      <input type="text" class="form-control" id="pageCount" required [(ngModel)]="article.pageCount" name="pageCount">
     </div>
 
     <button type="submit" class="btn btn-success">Submit</button>

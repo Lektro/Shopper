@@ -1,10 +1,13 @@
 package be.vdab.service;
 
 import be.vdab.model.Article;
+import org.springframework.stereotype.Service;
 
+@Service
 public interface ArticleService {
-
     Iterable<Article> getAllArticles();
 
-    void save(Article article);
+    Iterable<Article> createArticle();
+
+    Article save(Article article);
 }

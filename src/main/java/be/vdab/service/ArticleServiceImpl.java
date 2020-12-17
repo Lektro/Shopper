@@ -15,12 +15,18 @@ public class ArticleServiceImpl implements ArticleService {
         this.articleRepository = articleRepository;
     }
 
-    @Override
     public Iterable<Article> getAllArticles() {
         return articleRepository.findAll();
     }
 
     @Override
-    public void save(Article article) {
+    public Iterable<Article> createArticle() {
+        return null;
     }
+
+    @Override
+    public Article save(Article article) {
+        return null;
+    }
+
 }

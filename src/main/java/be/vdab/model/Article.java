@@ -2,7 +2,7 @@ package be.vdab.model;
 
 import javax.persistence.*;
 
-@Entity(name = "articles")
+@Entity(name = "article")
 @DiscriminatorColumn(name = "articleType", discriminatorType = DiscriminatorType.STRING)
 @Inheritance(strategy = InheritanceType.JOINED)
 public abstract class Article {
