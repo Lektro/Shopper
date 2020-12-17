@@ -4,37 +4,26 @@ import javax.persistence.*;
 
 @Entity
 @DiscriminatorValue("book")
+@Inheritance(strategy = InheritanceType.JOINED)
 public class BookNonFiction extends Book {
+
+    @Column
+    @Enumerated(EnumType.STRING)
+    private Subject subject;
 
     public BookNonFiction() {}
 
-    public BookNonFiction(String bookType) {
-        this.bookType = "NON-FICTION";
-    }
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(updatable = false, nullable = false)
-    private Long id;
-
-    @Column
-    private Subject bookSubject;
-
-    public Long getId() {
-        return id;
-    }
-
     public Subject getBookSubject() {
-        return bookSubject;
+        return subject;
     }
 
     public void setBookSubject(Subject bookSubject) {
-        this.bookSubject = bookSubject;
+        this.subject = bookSubject;
     }
 
     public enum Subject{
         HISTORY,
-        COOCKING,
+        COOKING,
         SCIENCE,
         SPORT
     }

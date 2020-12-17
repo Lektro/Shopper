@@ -3,13 +3,8 @@ package be.vdab.model;
 import javax.persistence.*;
 
 @Entity
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-public abstract class Book extends Article {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(updatable = false, nullable = false)
-    private Long id;
+@Inheritance(strategy = InheritanceType.JOINED)
+public class Book extends Article {
 
     @Column(length = 100)
     private String author;
@@ -21,11 +16,7 @@ public abstract class Book extends Article {
     private int pageCount;
 
     @Column
-    protected String bookType;
-
-    public Long getId() {
-        return id;
-    }
+    private String bookType;
 
     public String getAuthor() {
         return author;
@@ -57,5 +48,14 @@ public abstract class Book extends Article {
 
     public String getBookType() {
         return bookType;
+    }
+
+    public void setBookGenre(BookFiction.Genre genre) {
+    }
+
+    public void setSummary(String summary) {
+    }
+
+    public void setGenre(BookFiction.Genre genre) {
     }
 }

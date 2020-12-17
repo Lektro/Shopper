@@ -3,13 +3,12 @@ export interface Article {
     title: string;
     articleType: string;
     bookType: string;
-    bookSummary: string;
-    bookSubject: string;
+    summary: string;
+    subject: string;
     author: string;
     price: number;
     pageCount: number;
     genre: string;
-    subject: string;
     isbn: string;
     publisherId: number;
 

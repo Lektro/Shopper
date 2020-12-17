@@ -10,7 +10,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import static be.vdab.model.BookFiction.Genre.FANTASY;
-import static be.vdab.model.BookNonFiction.Subject.COOCKING;
+import static be.vdab.model.BookNonFiction.Subject.COOKING;
 
 @SpringBootApplication
 public class AppStart implements CommandLineRunner {
@@ -25,7 +25,7 @@ public class AppStart implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        BookFiction bookFiction = new BookFiction();
+        Book bookFiction = new BookFiction();
 
         bookFiction.setAuthor("JK Rowling");
         bookFiction.setBookType("FICTION");
@@ -34,12 +34,12 @@ public class AppStart implements CommandLineRunner {
         bookFiction.setPublisherId(1);
         bookFiction.setPageCount(285);
         bookFiction.setIsbn("1587859684754");
-        bookFiction.setBookSummary("test SUMMARY, casting no longer needed");
         bookFiction.setGenre(FANTASY);
+        bookFiction.setSummary("REEEE");
 
         // these two dont get listed, type null is gone tho lol
-        bookFiction.getGenre();
-        bookFiction.getBookSummary();
+       // bookFiction.setGenre();
+       // bookFiction.setBookSummary();
 
         articleRepository.save(bookFiction);
 
@@ -51,7 +51,7 @@ public class AppStart implements CommandLineRunner {
         bookNonFiction.setAuthor("Swedish Chef");
         bookNonFiction.setPageCount(158);
         bookNonFiction.setIsbn("1587859625874");
-        bookNonFiction.setBookSubject(COOCKING);
+        bookNonFiction.setBookSubject(COOKING);
 
         articleRepository.save(bookNonFiction);
 

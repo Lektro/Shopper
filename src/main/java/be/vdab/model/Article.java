@@ -1,10 +1,8 @@
 package be.vdab.model;
 
-import org.hibernate.annotations.Formula;
-
 import javax.persistence.*;
 
-@Entity
+@Entity(name = "articles")
 @DiscriminatorColumn(name = "articleType", discriminatorType = DiscriminatorType.STRING)
 @Inheritance(strategy = InheritanceType.JOINED)
 public abstract class Article {
